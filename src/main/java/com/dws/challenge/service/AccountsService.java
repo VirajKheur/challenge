@@ -22,7 +22,7 @@ public class AccountsService {
   @Autowired
   EmailNotificationService emailNotificationService;
 
-  // lock for thread safety
+  // lock for thread safety to prevent race condition to update balance
   private final ReentrantLock lock = new ReentrantLock();
 
   @Autowired
